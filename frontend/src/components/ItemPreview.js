@@ -55,8 +55,12 @@ const ItemPreview = (props) => {
             />
           </Link>
           <div className="flex-grow-1">
-            <img src="/verified_seller.svg" />
-            <span>TOP SELLER</span>
+            {item.seller.isVerified && (
+              <>
+                <img src="verified_seller.svg" />
+                <span>TOP SELLER</span>
+              </>
+            )}
           </div>
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             <i className="ion-heart"></i> {item.favoritesCount}
